@@ -1,0 +1,26 @@
+{
+    //JS로 컴파일하고 싶은 모든 (TS)디렉토리
+    "include": ["src"],
+    //TS 컴파일 옵션
+    "compilerOptions": {
+        //JS 파일이 생성될 디렉토리
+        "outDir": "build",
+        //컴파일할 JS 버전
+        "target": "ES6",
+        //Specify a set of bundled library declaration files that describe the target runtime environment.
+        //TS가 어떤 API를 사용하고 어떤 환경에서 코드를 실행하는 지를 지정
+        // -> target 런타임 환경이 무엇인지를 지정
+        // -> 사용할 api 미리 알고(정의 파일) 자동완성 기능 제공
+        // -> TS는 내장된 JS API를 위한 기본적인 타입 정의를 가지고 있다.(정의 파일 d.ts)
+        // "lib": ["ES6", "DOM"], //브라우저 환경
+        "lib": ["ES6"], //nodeJS 환경
+        //모든 엄격한 타입 검사 옵션
+        "strict": true,
+        //TS파일안에서 JS 허용 옵션 (JSDoc을 JS에서 활용)
+        // "allowJs": true,
+        //crypto import export
+        "esModuleInterop": true,
+        // "module": "umd" //브라우저 앱
+        "module": "CommonJS"
+    }
+}
